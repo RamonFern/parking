@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdicionaVeiculoComponent } from './dashboard/dialogs/adiciona-veiculo/adiciona-veiculo.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CheckoutComponent } from './dashboard/dialogs/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AdicionaVeiculoComponent,
     MenuComponent,
     LayoutComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,3 +6,19 @@
   display: flex;
   justify-content: space-around;
 }
+
+.header {
+  display: grid;
+  justify-items: center;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.data {
+  display: flex;
+  justify-content: center;
+}

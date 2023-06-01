@@ -1,0 +1,12 @@
+<ng-container *ngIf="parking">
+  <header>
+    <h1>Deseja fazer Check-out?</h1>
+  </header>
+  <div>
+    <h2>{{ parking.placa }}</h2>
+    <h2>{{ parking.modelo }}</h2>
+    <h2>{{ parking.dataEntrada }}</h2>
+  </div>
+  <h3>{{ parking.valor }}</h3>
+</ng-container>
+

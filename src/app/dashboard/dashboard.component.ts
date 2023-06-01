@@ -5,6 +5,7 @@ import { ParkingResponse } from 'src/response/parking-response';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogReturn } from '../components/dialog-return';
 import { AdicionaVeiculoComponent } from './dialogs/adiciona-veiculo/adiciona-veiculo.component';
+import { CheckoutComponent } from './dialogs/checkout/checkout.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -39,7 +40,22 @@ export class DashboardComponent implements OnInit {
       if (result?.hasDataChanged) {
         this.listarTodos();
       }
+    });
+  }
+
+  checkout(item: ParkingResponse) {
+    const dialogRef = this.dialog.open(CheckoutComponent, {
+      width: '550px',
+      data: item,
+    });
+
+    dialogRef.afterClosed().subscribe((result: DialogReturn) => {
+      if (result?.hasDataChanged) {
+        this.listarTodos();
+      }
   });
   }
+
+
 
 }
