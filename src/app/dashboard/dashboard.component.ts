@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
 import { ParkingService } from '../service/parking.service';
 import { ParkingResponse } from 'src/response/parking-response';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogReturn } from '../components/dialog-return';
+import { AdicionaVeiculoComponent } from './dialogs/adiciona-veiculo/adiciona-veiculo.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +15,7 @@ export class DashboardComponent implements OnInit {
 
   parkings: ParkingResponse[] = [];
 
-  constructor(private parkingService: ParkingService) { }
+  constructor(private parkingService: ParkingService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.listarTodos();
@@ -25,6 +28,18 @@ export class DashboardComponent implements OnInit {
           this.parkings = a;
           console.log(a);
         })
+  }
+
+  crieParking() {
+    const dialogRef = this.dialog.open(AdicionaVeiculoComponent, {
+      width: '550px',
+    });
+
+    dialogRef.afterClosed().subscribe((result: DialogReturn) => {
+      if (result?.hasDataChanged) {
+        this.listarTodos();
+      }
+  });
   }
 
 }
