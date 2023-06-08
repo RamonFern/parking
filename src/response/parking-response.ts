@@ -7,4 +7,5 @@ export interface ParkingResponse {
   dataEntrada: string
   datasaida: string
   valor: number
+  tempo: string
 }

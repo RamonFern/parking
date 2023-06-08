@@ -3,10 +3,21 @@
     <h1>Deseja fazer Check-out?</h1>
   </header>
   <div>
+    <span>Placa</span>
     <h2>{{ parking.placa }}</h2>
+    <span>Modelo</span>
     <h2>{{ parking.modelo }}</h2>
+    <span>entrada</span>
     <h2>{{ parking.dataEntrada }}</h2>
   </div>
-  <h3>{{ parking.valor }}</h3>
+  <div *ngIf="parking">
+    <span>Valor</span>
+    <h3>{{ parking.valor | currency: 'BRL':'symbol'}}</h3>
+    <span>saida</span>
+    <h3>{{ parking.datasaida }}</h3>
+    <span>tempo</span>
+    <h3>{{ parking.tempo }}</h3>
+  </div>
 </ng-container>
+<button mat-button style="color: #00000099" mat-dialog-close>SAIR</button>
 

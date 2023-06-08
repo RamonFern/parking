@@ -7,11 +7,20 @@
       </div>
     </mat-card-header>
     <mat-card-content>
-        <p class="data">{{ item.dataEntrada }}</p>
+      <span>entrada:</span>
+      <p class="data">{{ item.dataEntrada }}</p>
+      <div *ngIf="item.datasaida">
+        <span>saida:</span>
+        <p class="data">{{ item.datasaida }}</p>
+        <span>Tempo:</span>
+        <p class="data">{{ item.tempo }}</p>
+      </div>
+
+        <span *ngIf="item.valor">VALOR PAGO: {{ item.valor | currency: 'BRL':'symbol' }}</span>
 
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-stroked-button color="warn" (click)="checkout(item)">CHECK-OUT</button>
+    <mat-card-actions *ngIf="!item.valor">
+      <button *ngIf="!item.valor" mat-stroked-button color="warn" (click)="checkout(item)">CHECK-OUT</button>
       <button mat-stroked-button color="accent">EDITAR</button>
     </mat-card-actions>
   </mat-card>
