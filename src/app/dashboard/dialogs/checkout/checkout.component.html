@@ -10,14 +10,19 @@
     <span>entrada</span>
     <h2>{{ parking.dataEntrada }}</h2>
   </div>
-  <div *ngIf="parking">
+  <div *ngIf="valor > 0">
     <span>Valor</span>
-    <h3>{{ parking.valor | currency: 'BRL':'symbol'}}</h3>
-    <span>saida</span>
-    <h3>{{ parking.datasaida }}</h3>
-    <span>tempo</span>
-    <h3>{{ parking.tempo }}</h3>
+    <h3>{{ valor  | currency: 'BRL':'symbol'}}</h3>
+    <span>Saida</span>
+    <!-- <ng-container *ngIf="parking.datasaida"> -->
+      <h3>{{ saida }}</h3>
+    <!-- </ng-container> -->
+    <span>Tempo</span>
+    <h3>{{ tempo }}</h3>
   </div>
 </ng-container>
-<button mat-button style="color: #00000099" mat-dialog-close>SAIR</button>
+<div class="buttons">
+  <button mat-button style="color: #00000099" mat-dialog-close>SAIR</button>
+  <button mat-stroked-button color="primary" (click)="checkout(parking.id)">FINALIZAR</button>
+</div>
 

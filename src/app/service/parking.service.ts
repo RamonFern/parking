@@ -18,8 +18,12 @@ criar(parking: ParkingRequest) {
   return this.http.post<ParkingResponse>('http://localhost:8080/parada', parking);
 }
 
-buscarParcial(id: number) {
+checkout(id: number) {
   return this.http.post<ParkingResponse>(`http://localhost:8080/parada/${id}`, {});
 }
+
+// parcialCheckout(id: number) {
+//   return this.http.post<ParkingResponse>(`http://localhost:8080/parada/parcial/${id}`, {});
+// }
 
 }

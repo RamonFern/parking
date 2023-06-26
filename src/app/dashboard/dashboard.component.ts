@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogReturn } from '../components/dialog-return';
 import { AdicionaVeiculoComponent } from './dialogs/adiciona-veiculo/adiciona-veiculo.component';
 import { CheckoutComponent } from './dialogs/checkout/checkout.component';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,7 +28,7 @@ export class DashboardComponent implements OnInit {
         .pipe(take(1))
         .subscribe((a) => {
           this.parkings = a;
-          console.log(a);
+          // console.log(a);
         })
   }
 
@@ -44,18 +45,20 @@ export class DashboardComponent implements OnInit {
   }
 
   checkout(item: ParkingResponse) {
+    var parking = item
+    // console.log(parking)
+
     const dialogRef = this.dialog.open(CheckoutComponent, {
       width: '550px',
-      data: item,
+      data: parking,
     });
 
     dialogRef.afterClosed().subscribe((result: DialogReturn) => {
       if (result?.hasDataChanged) {
+        // console.log(result);
         this.listarTodos();
       }
-  });
+    });
   }
-
-
 
 }
