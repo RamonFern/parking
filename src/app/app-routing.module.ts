@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ListComponent } from './List/List.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,16 @@ const routes: Routes = [
           // },
       },
     ]
-  }
+  },
+  {
+    path: 'list-todos',
+    component: ListComponent,
+    // canActivate: [AuthGuard],
+    // canLoad: [AuthGuard],
+    // data: {
+    //     permissao: PermissaoType.ACESSO_PAGINA_DASHBOARD,
+    // },
+  },
 ];
 
 @NgModule({

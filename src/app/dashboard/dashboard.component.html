@@ -16,8 +16,6 @@
         <p class="data">{{ item.tempo }}</p>
         <span>VALOR PAGO: {{ item.valor | currency: 'BRL':'symbol' }}</span>
       </div>
-
-
     </mat-card-content>
     <mat-card-actions *ngIf="!item.valor">
       <button mat-stroked-button color="warn" (click)="checkout(item)">CHECK-OUT</button>

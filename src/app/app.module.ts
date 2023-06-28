@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdicionaVeiculoComponent } from './dashboard/dialogs/adiciona-veiculo/adiciona-veiculo.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CheckoutComponent } from './dashboard/dialogs/checkout/checkout.component';
+import { ListComponent } from './List/List.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { CheckoutComponent } from './dashboard/dialogs/checkout/checkout.compone
     MenuComponent,
     LayoutComponent,
     CheckoutComponent,
-  ],
+    ListComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,6 +38,7 @@ import { CheckoutComponent } from './dashboard/dialogs/checkout/checkout.compone
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatExpansionModule,
     MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule,
