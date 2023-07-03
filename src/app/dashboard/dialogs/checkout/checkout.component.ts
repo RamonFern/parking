@@ -34,7 +34,7 @@ export class CheckoutComponent implements OnInit {
     if(this.data) {
       this.parking = this.data;
       var dataSaida = moment();
-      var minutos = dataSaida.diff(moment(this.parking.dataEntrada, "DD/MM/YYYY HH:mm"), "minutes");
+      var minutos = dataSaida.diff(moment(this.parking.dataentrada, "DD/MM/YYYY HH:mm"), "minutes");
       // console.log(minutos);
       this.saida = dataSaida.format("DD/MM/YYYY HH:mm");
       this.tempo = this.tempoDePermanencia(minutos);

@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
     this.parkingService.listar()
         .pipe(take(1))
         .subscribe((a) => {
-          this.parkings = a;
+          this.parkings = a.filter((est) => est.valor === null);
           // console.log(a);
         })
   }

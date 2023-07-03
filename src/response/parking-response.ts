@@ -4,7 +4,7 @@ export interface ParkingResponse {
   estado: string
   modelo: string
   cor: string
-  dataEntrada: string
+  dataentrada: string
   datasaida: string
   valor: number
   tempo: string

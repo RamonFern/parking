@@ -5,3 +5,17 @@
 .expancil {
   margin-bottom: 10px;
 }
+
+.bola-pago {
+  width: 18px;
+  height: 18px;
+  background: red;
+  border-radius: 50%;
+}
+
+.status {
+  display: flex;
+  margin-right: 30px;
+  gap: 8px;
+  align-items: center;
+}

@@ -1,28 +1,26 @@
 <mat-accordion>
-  <div class="expancil">
+  <div class="expancil" *ngFor="let parking of parkings">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          DRE4R55
+          {{ parking.placa }}
         </mat-panel-title>
         <mat-panel-description>
-          GOLF
+          {{ parking.modelo }}
         </mat-panel-description>
+        <div class="status">
+          <mat-icon style="color: #1144ef" *ngIf="parking.valor"> task_alt </mat-icon>
+          <mat-icon style="color: #fb4e4e" *ngIf="parking.valor === null"> highlight_off </mat-icon>
+          <span>
+            {{ parking.valor ? "Veículo pago" : "Não pago" }}
+          </span>
+        </div>
       </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
+      <p>{{ parking.dataentrada }}</p>
+      <p>{{ parking.datasaida }}</p>
+      <p>{{ parking.tempo }}</p>
+      <p>{{ parking.valor | currency: 'BRL':'symbol' }}</p>
     </mat-expansion-panel>
   </div>
-
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        FGR5T45
-      </mat-panel-title>
-      <mat-panel-description>
-        ASTRA
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
-  </mat-expansion-panel>
 </mat-accordion>
 
